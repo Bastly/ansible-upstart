@@ -9,7 +9,7 @@ respawn limit 5 60 #try 5 times within 60 seconds, or giveup
 
 script
     echo $$ > /var/run/{{ service }}.pid
-    exec sudo -u nodejs node {{ script_path }} {{ extra_options }} >> /var/log/nodejs/{{ service }}.log 2>&1
+    exec sudo node {{ script_path }} {{ extra_options }} >> /var/log/nodejs/{{ service }}.log 2>&1
 end script
 
 pre-start script
